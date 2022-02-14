@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Videotest</string>
+    <string name="small_text_example">Ejemplo</string>
+    <string name="medium_text_example">Ejemplo de texto mediano</string>
+    <string name="large_text_example">Ejemplo para un texto largo y ver cómo encaja en el layout</string>
+
+    <!--region Main fragment-->
+    <string name="no_content">Contenido vacío</string>
+    <string name="no_internet">No hay conexión a internet</string>
+    <!--endregion-->
+
+    <string name="error_generic">Ha ocurrido un error</string>
+</resources>
