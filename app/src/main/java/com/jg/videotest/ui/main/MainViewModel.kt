@@ -30,8 +30,8 @@ class MainViewModel(
     fun fetchContent(context: Context) = viewModelScope.launch {
         contentStateFlow.value = Loading()
 
-        getCachedContent.execute().also { list ->
-            if (list.isEmpty()) {
+        getCachedContent.execute().also { cachedList ->
+            if (cachedList.isEmpty()) {
                 contentStateFlow.value = Loading()
                 contentList.clear()
                 getRemoteContent.execute().also { responseList ->
@@ -48,7 +48,7 @@ class MainViewModel(
             }
             else {
                 if (contentList.isEmpty())
-                    contentList.addAll(list)
+                    contentList.addAll(cachedList)
                 contentStateFlow.value = Success(contentList)
             }
         }
