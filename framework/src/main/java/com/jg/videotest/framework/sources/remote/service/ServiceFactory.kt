@@ -1,4 +1,4 @@
-package com.jg.videotest.framework.remote.service
+package com.jg.videotest.framework.sources.remote.service
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

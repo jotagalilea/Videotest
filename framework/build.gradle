@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    //id 'com.google.protobuf'
 }
 
 android {
@@ -19,7 +20,7 @@ android {
     // Para que funcionen los tests:
     packagingOptions {
         resources {
-            excludes += ['META-INF/AL2.0', 'META-INF/LGPL2.1']
+            //excludes += ['META-INF/AL2.0', 'META-INF/LGPL2.1']
         }
     }
 
@@ -56,6 +57,14 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
+    //endregion
+
+    //region gRPC
+    implementation("io.grpc:grpc-kotlin-stub:$grpc_version")
+    implementation("io.grpc:grpc-okhttp:$grpc_android_version")
+    implementation("io.grpc:grpc-android:$grpc_android_version")
+    //implementation("io.grpc:grpc-protobuf:$grpc_version")
+    //implementation("com.google.protobuf:protobuf-kotlin:$protobuf_version")
     //endregion
 
     //region Testing

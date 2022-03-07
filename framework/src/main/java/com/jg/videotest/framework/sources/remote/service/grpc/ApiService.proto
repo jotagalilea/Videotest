@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.jg.videotest.framework.sources.remote.service;
+
+//TODO: Recuerda que esto no va a funcionar porque no puedo cambiar las responses del servicio (JSON).
+
+/*option java_package = "com.example.proto";
+option java_outer_classname = "BookProto";*/
+
+message Book {
+    int64 isbn = 1;
+    string title = 2;
+    string author = 3;
+}
+
+message GetBookRequest {
+    int64 isbn = 1;
+}
+
+service ApiService {
+    rpc getContent (Request sin definir) returns (Provider1Response)
+}

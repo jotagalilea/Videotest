@@ -15,8 +15,9 @@ import com.jg.videotest.framework.local.mapper.VideoCacheMapper
 import com.jg.videotest.framework.local.model.datastore.ContentCachedDataStore
 import com.jg.videotest.framework.remote.datastore.Provider1RemoteDataStore
 import com.jg.videotest.framework.remote.mapper.Provider1RemoteMapper
-import com.jg.videotest.framework.remote.service.ServiceFactory
+import com.jg.videotest.framework.sources.remote.service.ServiceFactory
 import com.jg.videotest.framework.sources.local.db.ContentDatabase
+import com.jg.videotest.framework.sources.remote.service.grpc.Provider1ServiceGRPC
 import com.jg.videotest.ui.main.MainViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -34,7 +35,9 @@ val applicationModule = module {
     factory { get<ContentDatabase>().categoriesDao() }
     factory { get<ContentDatabase>().videosDao() }
 
-    factory { ServiceFactory.makeProvider1Service() }
+    //factory { ServiceFactory.makeProvider1Service() }
+    factory { Provider1ServiceGRPC() }
+    /////////////////////////////////////////
     factory<ContentRepository> { ContentDataRepository(get()) }
     factory<ContentCacheDataStore>(named("local")) { ContentCachedDataStore(get(), get(), get()) }
     factory<ContentDataStore>(named("remote1")) { Provider1RemoteDataStore(get(), get()) }

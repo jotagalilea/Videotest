@@ -1,4 +1,4 @@
-package com.jg.videotest.framework.remote.service
+package com.jg.videotest.framework.sources.remote.service
 
 import com.jg.videotest.framework.remote.model.Provider1Response
 import retrofit2.Response
