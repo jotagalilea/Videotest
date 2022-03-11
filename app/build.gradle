@@ -17,6 +17,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Para que funcionen los tests bajo ciertas condiciones:
+    /*packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }*/
+
     buildTypes {
         release {
             minifyEnabled false
@@ -30,11 +36,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dynamicFeatures = []
     viewBinding {
         enabled = true
     }
 }
+
+/*tasks.withType(Test) {
+    useJUnitPlatform()
+}*/
 
 dependencies {
 
@@ -76,13 +85,26 @@ dependencies {
 
     //region Testing
     testImplementation "junit:junit:$junit4_version"
-    testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
     testImplementation "io.insert-koin:koin-test:$koin_version"
     testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
-    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_testing_version"
+    debugImplementation("androidx.test.espresso:espresso-contrib:$espresso_version") {
+        exclude group: 'org.checkerframework', module: 'checker'
+    }
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "io.insert-koin:koin-test:$koin_version"
+    androidTestImplementation "androidx.test:runner:$androidx_test_version"
+    androidTestImplementation "androidx.test:rules:$androidx_test_version"
+    androidTestImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    //androidTestImplementation 'com.google.dexmaker:dexmaker-mockito:1.2'
+    androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.28.1'
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     //endregion
 }

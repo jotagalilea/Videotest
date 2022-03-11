@@ -32,7 +32,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class MainFragment : BaseFragment(), VideosAdapter.VideoClickListener {
 
     private var _binding: FragmentMainBinding? = null
-    private val binding get() = _binding!!
+    val binding get() = _binding!!
     private val viewModel: MainViewModel by sharedViewModel()
 
 
