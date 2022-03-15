@@ -10,10 +10,10 @@ buildscript {
     ext.exoplayer_version = '2.17.0'
     ext.junit4_version = '4.13.2'
     ext.espresso_version = '3.4.0'
-    ext.mockito_version = '4.3.1'
+    ext.mockito_version = '4.4.0'
     ext.mockito_kotlin_version = '4.0.0'
     ext.grpc_version = '1.2.1'
-    ext.grpc_android_version = '1.44.1'
+    ext.grpc_android_version = '1.45.0'
     //ext.protobuf_version = '3.19.4'
 }
 

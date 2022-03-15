@@ -63,6 +63,7 @@ dependencies {
     implementation("io.grpc:grpc-kotlin-stub:$grpc_version")
     implementation("io.grpc:grpc-okhttp:$grpc_android_version")
     implementation("io.grpc:grpc-android:$grpc_android_version")
+    //implementation("io.grpc:grpc-protobuf-lite:$grpc_android_version")
     //implementation("io.grpc:grpc-protobuf:$grpc_version")
     //implementation("com.google.protobuf:protobuf-kotlin:$protobuf_version")
     //endregion
