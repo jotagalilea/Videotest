@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/sonarlint
+/framework/schemas/com.jg.videotest.framework.sources.local.db.ContentDatabase/1.json

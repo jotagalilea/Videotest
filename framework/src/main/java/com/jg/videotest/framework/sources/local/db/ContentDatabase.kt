@@ -11,7 +11,8 @@ import com.jg.videotest.framework.local.model.content.VideoDBObject
     entities = [
         VideoDBObject::class, CategoryDBObject::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = true
 )
 abstract class ContentDatabase: RoomDatabase() {
 
